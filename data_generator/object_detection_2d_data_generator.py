@@ -494,11 +494,11 @@ class DataGenerator:
                         class_id = self.classes.index(class_name)
                         # Check whether this class is supposed to be included in the dataset.
                         if (not self.include_classes == 'all') and (not class_id in self.include_classes): continue
-                        pose = obj.find('pose', recursive=False).text
-                        truncated = int(obj.find('truncated', recursive=False).text)
-                        if exclude_truncated and (truncated == 1): continue
-                        difficult = int(obj.find('difficult', recursive=False).text)
-                        if exclude_difficult and (difficult == 1): continue
+                        # pose = obj.find('pose', recursive=False).text
+                        # truncated = int(obj.find('truncated', recursive=False).text)
+                        # if exclude_truncated and (truncated == 1): continue
+                        # difficult = int(obj.find('difficult', recursive=False).text)
+                        # if exclude_difficult and (difficult == 1): continue
                         # Get the bounding box coordinates.
                         bndbox = obj.find('bndbox', recursive=False)
                         xmin = int(bndbox.xmin.text)
@@ -510,9 +510,9 @@ class DataGenerator:
                                      'image_id': image_id,
                                      'class_name': class_name,
                                      'class_id': class_id,
-                                     'pose': pose,
-                                     'truncated': truncated,
-                                     'difficult': difficult,
+                                    #  'pose': pose,
+                                    #  'truncated': truncated,
+                                    #  'difficult': difficult,
                                      'xmin': xmin,
                                      'ymin': ymin,
                                      'xmax': xmax,
