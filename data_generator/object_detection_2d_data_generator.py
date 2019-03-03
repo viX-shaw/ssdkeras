@@ -521,8 +521,8 @@ class DataGenerator:
                         for item in self.labels_output_format:
                             box.append(item_dict[item])
                         boxes.append(box)
-                        if difficult: eval_neutr.append(True)
-                        else: eval_neutr.append(False)
+                        # if difficult: eval_neutr.append(True)
+                        # else: eval_neutr.append(False)
 
                     self.labels.append(boxes)
                     self.eval_neutral.append(eval_neutr)
