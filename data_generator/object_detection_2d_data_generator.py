@@ -501,10 +501,10 @@ class DataGenerator:
                         # if exclude_difficult and (difficult == 1): continue
                         # Get the bounding box coordinates.
                         bndbox = obj.find('bndbox', recursive=False)
-                        xmin = int(bndbox.xmin.text)
-                        ymin = int(bndbox.ymin.text)
-                        xmax = int(bndbox.xmax.text)
-                        ymax = int(bndbox.ymax.text)
+                        xmin = int(round(float(bndbox.xmin.text)))
+                        ymin = int(round(float(bndbox.ymin.text)))
+                        xmax = int(round(float(bndbox.xmax.text)))
+                        ymax = int(round(float(bndbox.ymax.text)))
                         # 'folder': folder,
                         item_dict = {'image_name': filename,
                                      'image_id': image_id,
